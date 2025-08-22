@@ -1,12 +1,36 @@
-pilaFia = []
+class Stack:
+  def __init__(self):
+    self.stack = []
 
-pilaFia.append('A')
-pilaFia.append('B')
-pilaFia.append('C')
+  def push(self, element):
+    self.stack.append(element)
 
-print("Stack: ", pilaFia.stack)
-print("Pop: ", pilaFia.pop())
-print("Stack after Pop: ", pilaFia.stack)
-print("Peek: ", pilaFia.peek())
-print("isEmpty: ", pilaFia.isEmpty())
-print("Size: ", pilaFia.size())
+  def pop(self):
+    if self.isEmpty():
+      return "Stack is empty"
+    return self.stack.pop()
+
+  def peek(self):
+    if self.isEmpty():
+      return "Stack is empty"
+    return self.stack[-1]
+
+  def isEmpty(self):
+    return len(self.stack) == 0
+
+  def size(self):
+    return len(self.stack)
+
+# Create a stack
+myStack = Stack()
+
+myStack.push('A')
+myStack.push('B')
+myStack.push('C')
+
+print("Stack: ", myStack.stack)
+print("Pop: ", myStack.pop())
+print("Stack after Pop: ", myStack.stack)
+print("Peek: ", myStack.peek())
+print("isEmpty: ", myStack.isEmpty())
+print("Size: ", myStack.size())
