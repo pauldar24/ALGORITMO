@@ -58,7 +58,7 @@ class ListaDoble:
                 if(p==self.inicio):  # Si está al inicio
                     self.inicio = p.sig
                     if self.inicio:  #Si hay un siguiente nodo
-                        self.incio.ant = None
+                        self.inicio.ant = None
                     else:
                         self.fin = None  # La lista quedó vacía
                 elif(p==self.fin):  # Está al final
@@ -66,7 +66,8 @@ class ListaDoble:
                     if self.fin:
                         self.fin.sig = None
                 else:  # Está en el medio
-                    p.ant.sig = p.sig.sig.ant = p.ant
+                    p.ant.sig = p.sig
+                    p.sig.ant = p.sig
                 print(f"Se eliminó {urlBscdo}")
             p = p.sig
             return
