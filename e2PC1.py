@@ -29,11 +29,11 @@ class ListaDoble:
 
     def retroceder(self):
         p = self.fin
-        print(f"\nURL actual: {p.url}")
+        print(f"\nPágina actual: {p.url, p.titulo, p.hora}")
         r = input("Desea retroceder? [SÍ(s)/NO(n)]: ").lower()
         while p and r=="s":
             if p.ant:
-                print("\nEl URL anterior: ", p.ant.url)
+                print(f"\nEl URL anterior: {p.ant.url, p.ant.titulo, p.ant.hora}")
             else:
                 print("\nYa no hay páginas hacia atrás")
             p = p.ant
@@ -41,11 +41,11 @@ class ListaDoble:
 
     def avanzar(self):
         p = self.inicio
-        print(f"\nURL actual: {p.url}")
+        print(f"\nURL actual: {p.url, p.titulo, p.hora}")
         r= input("Desea avanzar? [SÍ(s)/NO(n)]: ").lower()
         while p and r=="s":
             if p.sig:
-                print("\nSiguiente url: ", p.sig.url)
+                print(f"\nSiguiente url: {p.sig.url, p.sig.titulo, p.sig.hora}")
             else:
                 print("\nYa no hay más páginas hacia adelante")
             p = p.sig
